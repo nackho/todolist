@@ -7,6 +7,7 @@ function addTask(){
     }
     else{
         let li = document.createElement("li");
+        li.classList.add("task");
         li.innerHTML = entryBox.value;
         taskList.appendChild(li);
 
@@ -14,7 +15,15 @@ function addTask(){
         task_edit.classList.add("edit");
         task_edit.innerHTML = "Edit";
         taskList.appendChild(task_edit);
-        
+
+        // task_edit.addEventListener("click", function(e){
+        //     if (task_edit.innerText == "EDIT") {
+        //         task_edit.innerText = "Save";
+        //     } else {
+        //         console.log("hello test")
+        //     }
+        // })
+
         let span = document.createElement("span");
         span.innerHTML = "\u00d7";
         li.appendChild(span);
