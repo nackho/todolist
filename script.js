@@ -14,7 +14,7 @@ function addTask(){
         let taskRowEditButton = document.createElement("button");
         taskRowEditButton.classList.add("edit");
         taskRowEditButton.innerHTML = "Edit";
-        taskList.appendChild(taskRowEditButton);
+        taskRow.appendChild(taskRowEditButton);
 
         // task_edit.addEventListener("click", function(e){
         //     if (task_edit.innerText == "EDIT") {
