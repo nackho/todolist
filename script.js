@@ -1,32 +1,45 @@
 const entryBox = document.getElementById("entry-box");
 const taskList = document.getElementById("task-list");
 
+let taskCount = 0;
+
 function addTask(){
     if(entryBox.value === ''){
         alert("Enter task.");
     }
     else{
-        let li = document.createElement("li");
-        li.classList.add("task");
-        li.innerHTML = entryBox.value;
-        taskList.appendChild(li);
+        let taskRow = document.createElement("li");
+        taskRow.classList.add("task");
+        taskRow.innerHTML = entryBox.value;
+        taskRow.id = `${taskCount++}`;
+        taskList.appendChild(taskRow);
 
-        let task_edit = document.createElement("button");
-        task_edit.classList.add("edit");
-        task_edit.innerHTML = "Edit";
-        taskList.appendChild(task_edit);
+        let taskRowEditButton = document.createElement("button");
+        taskRowEditButton.classList.add("edit");
+        taskRowEditButton.innerHTML = "Edit";
+        taskRow.appendChild(taskRowEditButton);
 
-        // task_edit.addEventListener("click", function(e){
-        //     if (task_edit.innerText == "EDIT") {
-        //         task_edit.innerText = "Save";
-        //     } else {
-        //         console.log("hello test")
-        //     }
-        // })
+        // TODO: think about where and how to define the input element so it is accessible in the if and else blocks.
+        taskRowEditButton.addEventListener("click", function(e){
+            if (e.target.innerText === "Edit") {
+                e.target.innerText = "Save";
 
-        let span = document.createElement("span");
-        span.innerHTML = "\u00d7";
-        li.appendChild(span);
+                // TODO: create an input element with current taskRow text as it's value, then appendChild
+                // TODO: hide taskRow
+            } else {
+                // this else block triggers when Save is clicked.
+                e.target.innerText = "Edit";
+
+                // TODO: set taskRow innerHTML text to new input element's value.
+                // TODO: unhide taskRow. delete input element.
+            }
+        });
+
+        let taskRowDeleteButton = document.createElement("span");
+
+        let deleteButtonAsUnicode = "\u00d7"
+        taskRowDeleteButton.innerHTML = deleteButtonAsUnicode;
+        taskRow.appendChild(taskRowDeleteButton);
     }
     entryBox.value = '';
     saveData()
