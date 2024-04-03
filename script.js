@@ -19,11 +19,19 @@ function addTask(){
         taskRowEditButton.innerHTML = "Edit";
         taskRow.appendChild(taskRowEditButton);
 
+        // TODO: think about where and how to define the input element so it is accessible in the if and else blocks.
         taskRowEditButton.addEventListener("click", function(e){
             if (e.target.innerText === "Edit") {
                 e.target.innerText = "Save";
+
+                // TODO: create an input element with current taskRow text as it's value, then appendChild
+                // TODO: hide taskRow
             } else {
+                // this else block triggers when Save is clicked.
                 e.target.innerText = "Edit";
+
+                // TODO: set taskRow innerHTML text to new input element's value.
+                // TODO: unhide taskRow. delete input element.
             }
         });
 
