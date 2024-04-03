@@ -20,7 +20,7 @@ function addTask(){
         taskRow.appendChild(taskRowEditButton);
 
         taskRowEditButton.addEventListener("click", function(e){
-            if (taskRowEditButton.innerText == "EDIT") {
+            if (taskRowEditButton.innerText === "EDIT") {
                 taskRowEditButton.innerText = "Save";
             } else {
                 console.log("hello test")
