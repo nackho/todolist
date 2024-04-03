@@ -20,12 +20,12 @@ function addTask(){
         taskRow.appendChild(taskRowEditButton);
 
         taskRowEditButton.addEventListener("click", function(e){
-            if (taskRowEditButton.innerText === "EDIT") {
-                taskRowEditButton.innerText = "Save";
+            if (e.target.innerText === "Edit") {
+                e.target.innerText = "Save";
             } else {
                 console.log("hello test")
             }
-        })
+        });
 
         let taskRowDeleteButton = document.createElement("span");
 
