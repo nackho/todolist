@@ -19,13 +19,13 @@ function addTask(){
         taskRowEditButton.innerHTML = "Edit";
         taskRow.appendChild(taskRowEditButton);
 
-        // task_edit.addEventListener("click", function(e){
-        //     if (task_edit.innerText == "EDIT") {
-        //         task_edit.innerText = "Save";
-        //     } else {
-        //         console.log("hello test")
-        //     }
-        // })
+        taskRowEditButton.addEventListener("click", function(e){
+            if (taskRowEditButton.innerText == "EDIT") {
+                taskRowEditButton.innerText = "Save";
+            } else {
+                console.log("hello test")
+            }
+        })
 
         let taskRowDeleteButton = document.createElement("span");
 
