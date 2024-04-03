@@ -1,6 +1,8 @@
 const entryBox = document.getElementById("entry-box");
 const taskList = document.getElementById("task-list");
 
+let taskCount = 0;
+
 function addTask(){
     if(entryBox.value === ''){
         alert("Enter task.");
@@ -9,6 +11,7 @@ function addTask(){
         let taskRow = document.createElement("li");
         taskRow.classList.add("task");
         taskRow.innerHTML = entryBox.value;
+        taskRow.id = `${taskCount++}`;
         taskList.appendChild(taskRow);
 
         let taskRowEditButton = document.createElement("button");
