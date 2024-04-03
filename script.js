@@ -23,7 +23,7 @@ function addTask(){
             if (e.target.innerText === "Edit") {
                 e.target.innerText = "Save";
             } else {
-                console.log("hello test")
+                e.target.innerText = "Edit";
             }
         });
 
