@@ -6,15 +6,15 @@ function addTask(){
         alert("Enter task.");
     }
     else{
-        let li = document.createElement("li");
-        li.classList.add("task");
-        li.innerHTML = entryBox.value;
-        taskList.appendChild(li);
+        let taskRow = document.createElement("li");
+        taskRow.classList.add("task");
+        taskRow.innerHTML = entryBox.value;
+        taskList.appendChild(taskRow);
 
-        let task_edit = document.createElement("button");
-        task_edit.classList.add("edit");
-        task_edit.innerHTML = "Edit";
-        taskList.appendChild(task_edit);
+        let taskRowEditButton = document.createElement("button");
+        taskRowEditButton.classList.add("edit");
+        taskRowEditButton.innerHTML = "Edit";
+        taskList.appendChild(taskRowEditButton);
 
         // task_edit.addEventListener("click", function(e){
         //     if (task_edit.innerText == "EDIT") {
@@ -24,11 +24,11 @@ function addTask(){
         //     }
         // })
 
-        let span = document.createElement("span");
+        let taskRowDeleteButton = document.createElement("span");
 
-        let removeTaskButtonAsUnicode = "\u00d7"
-        span.innerHTML = removeTaskButtonAsUnicode;
-        li.appendChild(span);
+        let deleteButtonAsUnicode = "\u00d7"
+        taskRowDeleteButton.innerHTML = deleteButtonAsUnicode;
+        taskRow.appendChild(taskRowDeleteButton);
     }
     entryBox.value = '';
     saveData()
