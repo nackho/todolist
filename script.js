@@ -25,7 +25,9 @@ function addTask(){
         // })
 
         let span = document.createElement("span");
-        span.innerHTML = "\u00d7";
+
+        let removeTaskButtonAsUnicode = "\u00d7"
+        span.innerHTML = removeTaskButtonAsUnicode;
         li.appendChild(span);
     }
     entryBox.value = '';
